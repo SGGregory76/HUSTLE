@@ -1,91 +1,42 @@
+<!-- character-card.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Character Index</title>
-  <style>
-    body {
-      background: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      color: #4dc3ff;
-      margin-bottom: 20px;
-    }
-    .npc-list {
-      display: grid;
-      gap: 16px;
-      max-width: 360px;
-      margin: 0 auto;
-    }
-    .npc-card {
-      display: flex;
-      align-items: center;
-      background: #1e3a8a;
-      color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .npc-card:hover {
-      background: #347eff;
-    }
-    .npc-card img {
-      width: 64px;
-      height: 64px;
-      object-fit: cover;
-    }
-    .npc-info {
-      flex: 1;
-      padding: 10px;
-      text-align: left;
-    }
-    .npc-info strong {
-      font-size: 16px;
-      display: block;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Card</title>
+  <link rel="stylesheet" href="../css/character-style.css">
 </head>
 <body>
-  <h1>Character Cards</h1>
-  <div class="npc-list">
-    <a class="npc-card" href="character-card.html?npc=character-data">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmeYJ-WCNEBfgI1_QY0N0YtPtzsCzl3ud0nvZbX4cj31hz9XOQwSOPQwLfdcidlOCKFKr4zzeFJfVaJwADdsnTOkhb7pTwSzgFlBrKPpAteZxng8EThgNcdcWT9KlLaOdCYELPZQe46-yq2_eweTYZoB5rwUP2NolEc0YDZM-Sstmk1WODzX-dybwT3hQW/s1536/1000001060.png" alt="Bizzy">
-      <div class="npc-info"><strong>Bizzy Bullets</strong>Player</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=blaze">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmeYJ-WCNEBfgI1_QY0N0YtPtzsCzl3ud0nvZbX4cj31hz9XOQwSOPQwLfdcidlOCKFKr4zzeFJfVaJwADdsnTOkhb7pTwSzgFlBrKPpAteZxng8EThgNcdcWT9KlLaOdCYELPZQe46-yq2_eweTYZoB5rwUP2NolEc0YDZM-Sstmk1WODzX-dybwT3hQW/s320/1000001060.png" alt="Blaze">
-      <div class="npc-info"><strong>Blaze</strong>Street Boss</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=maya">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfZ74F-AXwt4tNlOpKujP_UPvgzri8vYv1uS7_aBpE5wuLeavO2DWb5uWSd_qmaupbaihvJjhED1aMTUkwZQl5W1mCIrFrYSqgRNE5WqZKYUi_qiGdmLgutAddS1XIhcsUlrG3iasP1KE0kZIWvM4NrC4W-JVUr_j54r6asIlW6CBzpK02khJlVl6YtEoL/s1536/1000001061.png" alt="Maya">
-      <div class="npc-info"><strong>Maya</strong>Fixer</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=skye">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfZ74F-AXwt4tNlOpKujP_UPvgzri8vYv1uS7_aBpE5wuLeavO2DWb5uWSd_qmaupbaihvJjhED1aMTUkwZQl5W1mCIrFrYSqgRNE5WqZKYUi_qiGdmLgutAddS1XIhcsUlrG3iasP1KE0kZIWvM4NrC4W-JVUr_j54r6asIlW6CBzpK02khJlVl6YtEoL/s320/1000001061.png" alt="Skye">
-      <div class="npc-info"><strong>Skye</strong>Hustler</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=rico">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPiBJQU4e26niWTD1mgvecaNX5kBC1Uy-7jCBIdkOsi9fJtCnGv0zlE5es-AdbufW24UHuLCJ1WGtEu40sxhq0Pv0LANifjphBFuNnLeJ7TiqKLtUROBLb-aA2bE8d63iiMElJjTtKh1bLItYgNFcav7GDkvDCMX9dlLDqmPoWEr2VfKhSnsjEBE3r8rKL/s1536/1000001062.png" alt="Rico">
-      <div class="npc-info"><strong>Rico</strong>Enforcer</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=jinx">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPiBJQU4e26niWTD1mgvecaNX5kBC1Uy-7jCBIdkOsi9fJtCnGv0zlE5es-AdbufW24UHuLCJ1WGtEu40sxhq0Pv0LANifjphBFuNnLeJ7TiqKLtUROBLb-aA2bE8d63iiMElJjTtKh1bLItYgNFcav7GDkvDCMX9dlLDqmPoWEr2VfKhSnsjEBE3r8rKL/s320/1000001062.png" alt="Jinx">
-      <div class="npc-info"><strong>Jinx</strong>Smuggler</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=nova">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcRf4YHoUlM4ZnZ2h3PZKN7CZHrCPe2GFPIuvt6CxeCULCoarNETSaO1c9wwp33VtAty6FOuFrfiND2o0Ug1HeJCvaVJqgT3hEGSa49axNVGP1pcjloWuAuqFoHoI7Um6XZw-Vw1TRjUTkLwn9bf-VI6fjr_8Cbv_e_o7fCP3xmSpQh3Oo2b_r0w3ARlHQ/s1536/1000001063.png" alt="Nova">
-      <div class="npc-info"><strong>Nova</strong>Chemist</div>
-    </a>
-    <a class="npc-card" href="character-card.html?npc=ghost">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcRf4YHoUlM4ZnZ2h3PZKN7CZHrCPe2GFPIuvt6CxeCULCoarNETSaO1c9wwp33VtAty6FOuFrfiND2o0Ug1HeJCvaVJqgT3hEGSa49axNVGP1pcjloWuAuqFoHoI7Um6XZw-Vw1TRjUTkLwn9bf-VI6fjr_8Cbv_e_o7fCP3xmSpQh3Oo2b_r0w3ARlHQ/s320/1000001063.png" alt="Ghost">
-      <div class="npc-info"><strong>Ghost</strong>Lookout</div>
-    </a>
+  <div class="card-wrapper">
+    <div class="card" id="characterCard">
+
+      <!-- Front -->
+      <div class="card-face front" id="cardFront">
+        <div class="stat-grid">
+          <div class="stat-btn">ATK: <span id="atk">0</span></div>
+          <div class="stat-btn">DEF: <span id="def">0</span></div>
+          <div class="stat-btn" onclick="useItem('hp')">❤️ HP: <span id="hp">0</span></div>
+          <div class="stat-btn" onclick="useItem('energy')">⚡ Energy: <span id="energy">0</span></div>
+          <div class="stat-btn" onclick="logStat('heat')">🔥 Heat: <span id="heat">0</span></div>
+          <div class="stat-btn" onclick="logStat('rp')">🧠 RP: <span id="rp">0</span></div>
+          <div class="stat-btn" onclick="logStat('cash')">💵 $<span id="cash">0</span></div>
+          <button class="flip-btn" onclick="flipCard()">Show Abilities</button>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div class="card-face back">
+        <h2 id="charName"></h2>
+        <p><strong>Passive:</strong> <span id="passive"></span></p>
+        <p><strong>Active:</strong> <span id="active"></span></p>
+        <p><strong>Unlock:</strong> <span id="unlock"></span></p>
+        <button class="flip-btn" onclick="flipCard()">Back to Card</button>
+      </div>
+
+    </div>
   </div>
+
+  <script src="../js/character-engine.js" defer></script>
 </body>
 </html>
