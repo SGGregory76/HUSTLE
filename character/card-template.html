@@ -1,0 +1,42 @@
+<!-- character-card.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Character Card</title>
+  <link rel="stylesheet" href="character-style.css">
+</head>
+<body>
+  <div class="card-wrapper">
+    <div class="card" id="characterCard">
+
+      <!-- Front -->
+      <div class="card-face front" id="cardFront">
+        <div class="stat-grid">
+          <div class="stat-btn">ATK: <span id="atk">0</span></div>
+          <div class="stat-btn">DEF: <span id="def">0</span></div>
+          <div class="stat-btn" onclick="useItem('hp')">❤️ HP: <span id="hp">0</span></div>
+          <div class="stat-btn" onclick="useItem('energy')">⚡ Energy: <span id="energy">0</span></div>
+          <div class="stat-btn" onclick="logStat('heat')">🔥 Heat: <span id="heat">0</span></div>
+          <div class="stat-btn" onclick="logStat('rp')">🧠 RP: <span id="rp">0</span></div>
+          <div class="stat-btn" onclick="logStat('cash')">💵 $<span id="cash">0</span></div>
+          <button class="flip-btn" onclick="flipCard()">Show Abilities</button>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div class="card-face back">
+        <h2 id="charName"></h2>
+        <p><strong>Passive:</strong> <span id="passive"></span></p>
+        <p><strong>Active:</strong> <span id="active"></span></p>
+        <p><strong>Unlock:</strong> <span id="unlock"></span></p>
+        <button class="flip-btn" onclick="flipCard()">Back to Card</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="character-engine.js"></script>
+</body>
+</html>
