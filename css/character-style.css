@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  background: #111;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.card-wrapper {
+  width: 100%;
+  max-width: 340px;
+  perspective: 1000px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 2/3;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-in-out;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  pointer-events: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #000;
+}
+
+.card-face.front {
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.card.flipped .front {
+  pointer-events: none;
+}
+
+.card.flipped .back {
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.back {
+  background: #111;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.back h2 {
+  color: #4dc3ff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px #000;
+  margin-bottom: 10px;
+}
+
+.stat-grid {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  z-index: 4;
+}
+
+.stat-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #4dc3ff;
+  color: #4dc3ff;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 8px;
+  padding: 6px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.stat-btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.flip-btn {
+  grid-column: span 3;
+  background: #1e3a8a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+@media (max-width: 380px) {
+  .stat-btn { font-size: 12px; padding: 5px; }
+  .flip-btn { font-size: 13px; padding: 6px; }
+}
