@@ -1,7 +1,9 @@
 // character-engine.js
 
 const character = async () => {
-  const res = await fetch('character-data.json');
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get('npc') || 'character-data';
+  const res = await fetch(`https://raw.githubusercontent.com/SGGregory76/HUSTLE/main/data/${name}.json`);
   const data = await res.json();
 
   // Set image background
