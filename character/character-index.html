@@ -18,36 +18,74 @@
     }
     .npc-list {
       display: grid;
-      gap: 12px;
+      gap: 16px;
       max-width: 360px;
       margin: 0 auto;
     }
-    a {
-      display: block;
+    .npc-card {
+      display: flex;
+      align-items: center;
       background: #1e3a8a;
       color: #fff;
-      padding: 10px 16px;
       border-radius: 8px;
+      overflow: hidden;
       text-decoration: none;
-      font-weight: bold;
       transition: background 0.2s;
     }
-    a:hover {
+    .npc-card:hover {
       background: #347eff;
+    }
+    .npc-card img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+    }
+    .npc-info {
+      flex: 1;
+      padding: 10px;
+      text-align: left;
+    }
+    .npc-info strong {
+      font-size: 16px;
+      display: block;
     }
   </style>
 </head>
 <body>
   <h1>Character Cards</h1>
   <div class="npc-list">
-    <a href="character-card.html?npc=character-data">Bizzy Bullets</a>
-    <a href="character-card.html?npc=blaze">Blaze</a>
-    <a href="character-card.html?npc=maya">Maya</a>
-    <a href="character-card.html?npc=skye">Skye</a>
-    <a href="character-card.html?npc=rico">Rico</a>
-    <a href="character-card.html?npc=jinx">Jinx</a>
-    <a href="character-card.html?npc=nova">Nova</a>
-    <a href="character-card.html?npc=ghost">Ghost</a>
+    <a class="npc-card" href="character-card.html?npc=character-data">
+      <img src="https://your-cdn.com/avatars/bizzy.png" alt="Bizzy">
+      <div class="npc-info"><strong>Bizzy Bullets</strong>Player</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=blaze">
+      <img src="https://your-cdn.com/avatars/blaze.png" alt="Blaze">
+      <div class="npc-info"><strong>Blaze</strong>Street Boss</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=maya">
+      <img src="https://your-cdn.com/avatars/maya.png" alt="Maya">
+      <div class="npc-info"><strong>Maya</strong>Fixer</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=skye">
+      <img src="https://your-cdn.com/avatars/skye.png" alt="Skye">
+      <div class="npc-info"><strong>Skye</strong>Hustler</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=rico">
+      <img src="https://your-cdn.com/avatars/rico.png" alt="Rico">
+      <div class="npc-info"><strong>Rico</strong>Enforcer</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=jinx">
+      <img src="https://your-cdn.com/avatars/jinx.png" alt="Jinx">
+      <div class="npc-info"><strong>Jinx</strong>Smuggler</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=nova">
+      <img src="https://your-cdn.com/avatars/nova.png" alt="Nova">
+      <div class="npc-info"><strong>Nova</strong>Chemist</div>
+    </a>
+    <a class="npc-card" href="character-card.html?npc=ghost">
+      <img src="https://your-cdn.com/avatars/ghost.png" alt="Ghost">
+      <div class="npc-info"><strong>Ghost</strong>Lookout</div>
+    </a>
   </div>
 </body>
 </html>
