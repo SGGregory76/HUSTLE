@@ -1,0 +1,16 @@
+{
+  "name": "Blaze",
+  "role": "Street Boss",
+  "rep": 10,
+  "drugOfChoice": "Cocaine",
+  "image": "https://yourcdn.com/blaze-card.png",
+  "inventory": [
+    { "item": "Cocaine", "qty": 5, "price": 200, "value": 180 },
+    { "item": "Ecstasy", "qty": 2, "price": 120, "value": 100 }
+  ],
+  "abilities": {
+    "passive": "Price breaks for high REP",
+    "active": "Bulk sell available if REP > 15",
+    "unlock": "Unlock rare items at REP 25"
+  }
+}
