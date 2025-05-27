@@ -1,18 +1,17 @@
-<!-- character-card.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Character Card</title>
-  <link rel="stylesheet" href="../css/character-style.css">
+  <title>Bizzy Bullets</title>
+  <link rel="stylesheet" href="../css/character-style.css" />
+  <script defer src="../js/character-engine.js"></script>
 </head>
 <body>
   <div class="card-wrapper">
     <div class="card" id="characterCard">
-
-      <!-- Front -->
-      <div class="card-face front" id="cardFront">
+      <!-- FRONT -->
+      <div class="card-face front">
         <div class="stat-grid">
           <div class="stat-btn">ATK: <span id="atk">0</span></div>
           <div class="stat-btn">DEF: <span id="def">0</span></div>
@@ -25,18 +24,17 @@
         </div>
       </div>
 
-      <!-- Back -->
+      <!-- BACK -->
       <div class="card-face back">
-        <h2 id="charName"></h2>
-        <p><strong>Passive:</strong> <span id="passive"></span></p>
-        <p><strong>Active:</strong> <span id="active"></span></p>
-        <p><strong>Unlock:</strong> <span id="unlock"></span></p>
-        <button class="flip-btn" onclick="flipCard()">Back to Card</button>
+        <h2>Player</h2>
+        <div class="abilities-section">
+          <p><strong>Passive:</strong> <span id="passive">...</span></p>
+          <p><strong>Active:</strong> <span id="active">...</span></p>
+          <p><strong>Unlock:</strong> <span id="unlock">...</span></p>
+        </div>
+        <button class="flip-btn" onclick="flipCard()">Back</button>
       </div>
-
     </div>
   </div>
-
-  <script src="../js/character-engine.js" defer></script>
 </body>
 </html>
