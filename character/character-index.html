@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bizzy Bullets</title>
-  <link rel="stylesheet" href="../css/character-style.css" />
-  <script defer src="../js/character-engine.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bizzy Bullets</title>
+  <link rel="stylesheet" href="../css/character-style.css" />
+  <script defer src="../js/character-engine.js"></script>
 </head>
 <body>
-  <div class="card-wrapper">
-    <div class="card" id="characterCard">
-      <!-- FRONT -->
-      <div class="card-face front">
-        <div class="stat-grid">
-          <div class="stat-btn">ATK: <span id="atk">0</span></div>
-          <div class="stat-btn">DEF: <span id="def">0</span></div>
-          <div class="stat-btn" onclick="useItem('hp')">❤️ HP: <span id="hp">0</span></div>
-          <div class="stat-btn" onclick="useItem('energy')">⚡ Energy: <span id="energy">0</span></div>
-          <div class="stat-btn" onclick="logStat('heat')">🔥 Heat: <span id="heat">0</span></div>
-          <div class="stat-btn" onclick="logStat('rp')">🧠 RP: <span id="rp">0</span></div>
-          <div class="stat-btn" onclick="logStat('cash')">💵 $<span id="cash">0</span></div>
-          <button class="flip-btn" onclick="flipCard()">Show Abilities</button>
-        </div>
-      </div>
+  <div class="card-wrapper">
+    <div class="card" id="characterCard">
+      <!-- FRONT -->
+      <div class="card-face front">
+        <div class="stat-grid">
+          <div class="stat-btn">ATK: <span id="atk">0</span></div>
+          <div class="stat-btn">DEF: <span id="def">0</span></div>
+          <div class="stat-btn" onclick="useItem('hp')">❤️ HP: <span id="hp">0</span></div>
+          <div class="stat-btn" onclick="useItem('energy')">⚡ Energy: <span id="energy">0</span></div>
+          <div class="stat-btn" onclick="logStat('heat')">🔥 Heat: <span id="heat">0</span></div>
+          <div class="stat-btn" onclick="logStat('rp')">🧠 RP: <span id="rp">0</span></div>
+          <div class="stat-btn" onclick="logStat('cash')">💵 $<span id="cash">0</span></div>
+          <div class="stat-btn">🧬 LVL: <span id="lvl">1</span></div>
+          <button class="flip-btn" onclick="flipCard()">Show Abilities</button>
+        </div>
+      </div>
 
-      <!-- BACK -->
-      <div class="card-face back">
-        <h2>Player</h2>
-        <div class="abilities-section">
-          <p><strong>Passive:</strong> <span id="passive">...</span></p>
-          <p><strong>Active:</strong> <span id="active">...</span></p>
-          <p><strong>Unlock:</strong> <span id="unlock">...</span></p>
-        </div>
-        <button class="flip-btn" onclick="flipCard()">Back</button>
-      </div>
-    </div>
-  </div>
+      <!-- BACK -->
+      <div class="card-face back">
+        <h2>Player</h2>
+        <div class="abilities-section">
+          <p><strong>Passive:</strong> <span id="passive">...</span></p>
+          <p><strong>Active:</strong> <span id="active">...</span></p>
+          <p><strong>Unlock:</strong> <span id="unlock">...</span></p>
+        </div>
+        <button class="flip-btn" onclick="flipCard()">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load persistent stats -->
+  <script src="../js/stats-init.js"></script>
 </body>
 </html>
