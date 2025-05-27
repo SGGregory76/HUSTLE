@@ -1,33 +1,38 @@
-// character-engine.js
+// character-engine.js — reads data/character-data.json for player info
 
-const character = async () => {
-  const params = new URLSearchParams(window.location.search);
-  const name = params.get('npc') || 'character-data';
-  const res = await fetch(`https://raw.githubusercontent.com/SGGregory76/HUSTLE/main/data/${name}.json`);
-  const data = await res.json();
+async function loadPlayerCard() {
+  try {
+    const res = await fetch("../data/character-data.json");
+    const data = await res.json();
 
-  // Set image background
-  document.querySelector('.front').style.background = `url('${data.image}') center center / cover no-repeat`;
+    // Set stat values
+    const stats = data.stats;
+    for (const stat in stats) {
+      const el = document.getElementById(stat);
+      if (el) el.textContent = stats[stat];
+    }
 
-  // Set stats
-  for (let key in data.stats) {
-    const el = document.getElementById(key);
-    if (el) el.textContent = data.stats[key];
+    // Set name if applicable
+    const nameEl = document.querySelector(".card-face.back h2");
+    if (nameEl) nameEl.textContent = data.name || "Player";
+
+    // Set abilities
+    if (data.abilities) {
+      document.getElementById("passive").textContent = data.abilities.passive;
+      document.getElementById("active").textContent = data.abilities.active;
+      document.getElementById("unlock").textContent = data.abilities.unlock;
+    }
+  } catch (err) {
+    console.error("Error loading character-data.json:", err);
   }
-
-  // Set abilities
-  document.getElementById('charName').textContent = `${data.name} – ${data.title}`;
-  document.getElementById('passive').textContent = data.abilities.passive;
-  document.getElementById('active').textContent = data.abilities.active;
-  document.getElementById('unlock').textContent = data.abilities.unlock;
-};
+}
 
 function flipCard() {
-  document.getElementById('characterCard').classList.toggle('flipped');
+  document.getElementById("characterCard").classList.toggle("flipped");
 }
 
 function logStat(stat) {
-  alert(`${stat.toUpperCase()} clicked`);
+  alert(stat.toUpperCase() + " clicked");
 }
 
 function useItem(type) {
@@ -41,4 +46,4 @@ function useItem(type) {
   el.textContent = val + 1;
 }
 
-window.addEventListener('DOMContentLoaded', character);
+window.addEventListener("DOMContentLoaded", loadPlayerCard);
