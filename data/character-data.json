@@ -1,5 +1,7 @@
 {
   "name": "Bizzy Bullets",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjljYFvAhXy_sC9lfMUIg8IusO1R40smqQP07wm7NHZzKSfR9eeYjK-vNBD81blvhURZGaqDf7XaY5wHWA-hN0rPawP0c5zrO9WtPw8EzN-2bGg7o9e8GQcOys2q-9DmkFxIytdfXoWSGSWvtyNyNUq2VBOf7_dp0ad5udeC0-VctCevv7EDA4wa-unC__H/s320/1000001068.png",
+  "levelFormula": 10,
   "stats": {
     "atk": 5,
     "def": 3,
@@ -7,7 +9,9 @@
     "energy": 5,
     "cash": 150,
     "heat": 2,
-    "rp": 3
+    "rp": 3,
+    "xp": 8,
+    "lvl": 1
   },
   "abilities": {
     "passive": "Hustleborn - Earn extra XP on street encounters.",
