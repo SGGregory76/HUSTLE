@@ -1,4 +1,4 @@
-// prologue-engine.js
+// prologue-engine.js — with localStorage stat saving
 let prologueState = {
   step: 0,
   progress: "intro",
@@ -47,8 +47,32 @@ function applyEffects(e) {
   if (!e) return;
   for (const key in e) {
     if (key === "item") prologueState.results.item.push(e[key]);
-    else prologueState.results[key] = (prologueState.results[key] || 0) + e[key];
+    else {
+      prologueState.results[key] = (prologueState.results[key] || 0) + e[key];
+      updateCharacterCardStat(key, prologueState.results[key]);
+    }
   }
+  saveStatsToStorage();
+}
+
+function updateCharacterCardStat(stat, value) {
+  const el = document.getElementById(stat);
+  if (el) el.textContent = value;
+  if (stat === "xp") {
+    const level = Math.floor(value / 20) + 1;
+    updateCharacterCardStat("lvl", level);
+  }
+}
+
+function saveStatsToStorage() {
+  let stored = localStorage.getItem("playerStats");
+  let stats = stored ? JSON.parse(stored) : {};
+  for (const key in prologueState.results) {
+    if (key === "item") continue;
+    stats[key] = (stats[key] || 0) + prologueState.results[key];
+  }
+  stats["lvl"] = Math.floor((stats["xp"] || 0) / 20) + 1;
+  localStorage.setItem("playerStats", JSON.stringify(stats));
 }
 
 function showStash() {
@@ -91,6 +115,8 @@ function showCombat() {
   prologueState.enemyHP = prologueState.data.combat.enemy.hp;
   prologueState.playerHP = prologueState.data.combat.playerStart.hp;
   prologueState.energy = prologueState.data.combat.playerStart.energy;
+  updateCharacterCardStat("hp", prologueState.playerHP);
+  updateCharacterCardStat("energy", prologueState.energy);
   renderCombat();
 }
 
@@ -108,11 +134,13 @@ function attackEnemy() {
   const dmg = 3;
   prologueState.enemyHP -= dmg;
   prologueState.energy--;
+  updateCharacterCardStat("energy", prologueState.energy);
   if (prologueState.enemyHP <= 0) {
     applyEffects(prologueState.data.combat.enemy.reward);
     return showPrologueEnd();
   }
   prologueState.playerHP -= prologueState.data.combat.enemy.atk;
+  updateCharacterCardStat("hp", prologueState.playerHP);
   if (prologueState.playerHP <= 0) return renderBox("You lost the fight.", `<button onclick='showPrologueEnd()'>Continue</button>`);
   renderCombat();
 }
@@ -123,9 +151,7 @@ function showPrologueEnd() {
 }
 
 function finishPrologue() {
-  // Save final results to player state here if needed
   localStorage.setItem("prologue_complete", "true");
-  alert("Stats gained: " + JSON.stringify(prologueState.results));
   window.location.href = "../character/character-index.html";
 }
 
