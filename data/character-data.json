@@ -1,33 +1,12 @@
 {
   "name": "Bizzy Bullets",
-  "image": "{
-  "name": "Bizzy Bullets",
-  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjljYFvAhXy_sC9lfMUIg8IusO1R40smqQP07wm7NHZzKSfR9eeYjK-vNBD81blvhURZGaqDf7XaY5wHWA-hN0rPawP0c5zrO9WtPw8EzN-2bGg7o9e8GQcOys2q-9DmkFxIytdfXoWSGSWvtyNyNUq2VBOf7_dp0ad5udeC0-VctCevv7EDA4wa-unC__H/s320/1000001068.png",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh07Zz7BMtHXIEx8UsO1xgHV_4Q1HyEf3ySPNBlQTCY4ICdtUEdNOj1ZniSJKSSuToq7IAxIGiKO-l9m72a9mKUXAkF3gu2mlKSLYQdNPVZk-mrZ9-xqGC5wwjcWQ7UMLaJ6klk6VnUu6MzQHH7YB2t2duZ0dq_HN_82QXQ6MO3tN-yzDFx9ki7oaNm3Yg/s16000/ChatGPT%20Image%20May%2026,%202025,%2006_12_14%20AM.png",
   "levelFormula": 10,
   "stats": {
     "atk": 5,
     "def": 3,
     "hp": 10,
     "energy": 5,
-    "cash": 150,
-    "heat": 2,
-    "rp": 3,
-    "xp": 8,
-    "lvl": 1
-  },
-  "abilities": {
-    "passive": "Hustleborn - Earn extra XP on street encounters.",
-    "active": "Gun Talk - Strike twice if Energy > 2.",
-    "unlock": "Kingpin Tier - Leadership perks at Level 10."
-  }
-}
-",
-  "levelFormula": 10,
-  "stats": {
-    "atk": 5,
-    "def": 3,
-    "hp": 10,
-    "energy": 3,
     "cash": 150,
     "heat": 0,
     "rp": 0,
