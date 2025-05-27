@@ -1,0 +1,63 @@
+{
+  "intro": {
+    "text": "You wake up in a broken-down car. Cold, hungry, and broke. But still breathing.",
+    "button": "Start Hustle"
+  },
+  "questions": [
+    {
+      "text": "What’s your first instinct?",
+      "options": [
+        { "label": "Search the glovebox", "effects": { "cash": 5 } },
+        { "label": "Check the alley", "effects": { "xp": 1, "heat": 1 } }
+      ]
+    },
+    {
+      "text": "A stranger offers a burner phone. Take it?",
+      "options": [
+        { "label": "Yes", "effects": { "item": "burner phone", "xp": 1 } },
+        { "label": "No thanks", "effects": { "rp": 1 } }
+      ]
+    },
+    {
+      "text": "You see someone drop a bag. What do you do?",
+      "options": [
+        { "label": "Grab it and run", "effects": { "heat": 2, "item": "random stash" } },
+        { "label": "Leave it", "effects": { "rp": 1 } }
+      ]
+    },
+    {
+      "text": "Someone offers you a deal — no details. Accept?",
+      "options": [
+        { "label": "Yes", "effects": { "xp": 1, "heat": 1 } },
+        { "label": "Ask questions", "effects": { "rp": 2 } }
+      ]
+    },
+    {
+      "text": "Your stomach growls. Last choice before night.",
+      "options": [
+        { "label": "Buy food", "effects": { "cash": -3, "rp": 1 } },
+        { "label": "Smoke to distract hunger", "effects": { "heat": 1 } }
+      ]
+    }
+  ],
+  "stash": {
+    "text": "Hidden stash spotted nearby. You get 3 tries to find the right crate.",
+    "rows": 3,
+    "cols": 3,
+    "reward": { "item": "stash loot", "cash": 25 }
+  },
+  "combat": {
+    "enemy": {
+      "name": "Street Thug",
+      "hp": 10,
+      "atk": 2,
+      "reward": { "xp": 5, "cash": 40 }
+    },
+    "playerStart": { "hp": 10, "energy": 3 }
+  },
+  "end": {
+    "text": "You’ve survived the first day. The real game begins now.",
+    "rewards": { "xp": 5, "cash": 10, "rp": 1 },
+    "flags": ["prologue_complete"]
+  }
+}
