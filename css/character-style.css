@@ -1,3 +1,5 @@
+/* character-style.css */
+
 body {
   margin: 0;
   background: #111;
@@ -41,6 +43,7 @@ body {
 .card-face.front {
   pointer-events: auto;
   z-index: 2;
+  background: url('../img/bizzy-card-bg.png') center center / cover no-repeat;
 }
 
 .card.flipped .front {
@@ -52,66 +55,83 @@ body {
   z-index: 3;
 }
 
-.back {
-  background: #111;
+.card-face.back {
+  background: rgba(17, 17, 17, 0.98);
   color: #fff;
   transform: rotateY(180deg);
-  padding: 16px;
-  text-align: center;
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.back h2 {
+.card-face.back h2 {
   color: #4dc3ff;
   letter-spacing: 1px;
   text-shadow: 1px 1px 3px #000;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  font-size: 18px;
+  text-align: center;
+}
+
+.abilities-section {
+  flex-grow: 1;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.abilities-section p {
+  margin: 8px 0;
+  line-height: 1.4;
 }
 
 .stat-grid {
   position: absolute;
-  bottom: 16px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  width: 94%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
   z-index: 4;
 }
 
 .stat-btn {
-  background: rgba(0, 0, 0, 0.6);
-  border: 2px solid #4dc3ff;
+  flex: 1 1 30%;
+  background: transparent;
+  border: 2px solid #999;
   color: #4dc3ff;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 11px;
   text-align: center;
-  border-radius: 8px;
-  padding: 6px;
+  border-radius: 6px;
+  padding: 4px;
   backdrop-filter: blur(4px);
   cursor: pointer;
 }
 
-.stat-btn:hover {
-  background: rgba(0, 0, 0, 0.75);
-}
-
 .flip-btn {
-  grid-column: span 3;
-  background: #1e3a8a;
-  color: #fff;
-  border: none;
+  background: transparent;
+  border: 1px solid #4dc3ff;
+  color: #4dc3ff;
   border-radius: 6px;
   font-weight: bold;
-  padding: 8px;
+  padding: 5px 10px;
   cursor: pointer;
-  margin-top: 10px;
+  font-size: 11px;
+  margin: 12px auto 6px;
+  max-width: 120px;
 }
 
-@media (max-width: 380px) {
-  .stat-btn { font-size: 12px; padding: 5px; }
-  .flip-btn { font-size: 13px; padding: 6px; }
+@media (max-width: 400px) {
+  .card-wrapper {
+    max-width: 94vw;
+  }
 }
